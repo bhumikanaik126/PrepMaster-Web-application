@@ -13,7 +13,9 @@ import NotFound from './components/NotFound.jsx'
 import useAuthStore from './components/store/authStore.js'
 import { Navigate } from 'react-router-dom'
 import GoogleSuccess from './components/google-success.jsx'
-import Create from './components/playlist/Create.jsx'
+import CreatePlaylist from './components/CreatePlaylist.jsx'
+import ProfileForm from './components/ProfileForm.jsx'
+import ProFeaturesPage from './components/ProFeaturesPage.jsx'
 
 
 function App() {
@@ -26,6 +28,7 @@ function App() {
           <Route path="/" element={<Signup />} />
           <Route path="/login" element={<Login />} />
           <Route path="/google-success" element={<GoogleSuccess />} />
+          <Route path="/profile" element={<ProfileForm />} />
 
           {/* Protected Dashboard */}
           <Route path="/dashboard" element={
@@ -36,11 +39,20 @@ function App() {
 
 
            {/* Protected Dashboard */}
-          <Route path="/playlist" element={
+          <Route path="/create-plan" element={
             <ProtectedRoute>
-              <Create />
+              <CreatePlaylist />
             </ProtectedRoute>
           } />
+
+ {/* Protected Dashboard */}
+          <Route path="/pro-features" element={
+            <ProtectedRoute>
+              <ProFeaturesPage />
+            </ProtectedRoute>
+          } />
+
+          
 
           
 
